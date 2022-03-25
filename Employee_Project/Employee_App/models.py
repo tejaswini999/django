@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Employee(models.Model):
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=5000)
     last_name = models.CharField(max_length=5000)
     email = models.EmailField(max_length=5000,unique=True)
