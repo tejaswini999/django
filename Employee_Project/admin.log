@@ -1,0 +1,95 @@
+u'{"time":"2022-03-30 11:51:12,524","name":"root","level": "WARNING","module": "schema","line": "91","message": "employee does not exist"}'
+u'{"time":"2022-03-30 11:51:12,564","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 92, in mutate
+    raise Exception("employee does not exist")
+graphql.error.located_error.GraphQLLocatedError: employee does not exist
+"}'
+u'{"time":"2022-03-30 11:51:51,156","name":"root","level": "INFO","module": "schema","line": "45","message": "started creating employee"}'
+u'{"time":"2022-03-30 11:51:51,168","name":"root","level": "INFO","module": "schema","line": "60","message": "created employee successfully"}'
+u'{"time":"2022-03-30 11:52:06,874","name":"root","level": "INFO","module": "schema","line": "45","message": "started creating employee"}'
+u'{"time":"2022-03-30 11:52:06,878","name":"root","level": "ERROR","module": "schema","line": "64","message": "problem in creating employee"}'
+u'{"time":"2022-03-30 11:52:06,880","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 65, in mutate
+    raise Exception("problem in creating employee")
+graphql.error.located_error.GraphQLLocatedError: problem in creating employee
+"}'
+u'{"time":"2022-03-30 11:53:02,042","name":"root","level": "WARNING","module": "schema","line": "133","message": "employee does not exist"}'
+u'{"time":"2022-03-30 11:53:02,043","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 134, in mutate
+    raise Exception("employee does not exist")
+graphql.error.located_error.GraphQLLocatedError: employee does not exist
+"}'
+u'{"time":"2022-03-30 11:53:42,430","name":"root","level": "INFO","module": "schema","line": "137","message": "started deleting employee"}'
+u'{"time":"2022-03-30 11:53:42,440","name":"root","level": "INFO","module": "schema","line": "139","message": "deleted employee successfully"}'
+u'{"time":"2022-03-30 11:53:51,046","name":"root","level": "WARNING","module": "schema","line": "133","message": "employee does not exist"}'
+u'{"time":"2022-03-30 11:53:51,048","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 134, in mutate
+    raise Exception("employee does not exist")
+graphql.error.located_error.GraphQLLocatedError: employee does not exist
+"}'
+u'{"time":"2022-03-30 11:59:12,395","name":"root","level": "INFO","module": "schema","line": "45","message": "started creating employee"}'
+u'{"time":"2022-03-30 11:59:12,413","name":"root","level": "INFO","module": "schema","line": "60","message": "created employee successfully"}'
+u'{"time":"2022-03-30 11:59:16,316","name":"root","level": "INFO","module": "schema","line": "45","message": "started creating employee"}'
+u'{"time":"2022-03-30 11:59:16,332","name":"root","level": "ERROR","module": "schema","line": "64","message": "problem in creating employee"}'
+u'{"time":"2022-03-30 11:59:16,333","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 65, in mutate
+    raise Exception("problem in creating employee")
+graphql.error.located_error.GraphQLLocatedError: problem in creating employee
+"}'
+u'{"time":"2022-03-30 12:00:33,307","name":"root","level": "INFO","module": "schema","line": "45","message": "started creating employee"}'
+u'{"time":"2022-03-30 12:00:33,314","name":"root","level": "ERROR","module": "schema","line": "64","message": "problem in creating employee"}'
+u'{"time":"2022-03-30 12:00:33,317","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 65, in mutate
+    raise Exception("problem in creating employee")
+graphql.error.located_error.GraphQLLocatedError: problem in creating employee
+"}'
+u'{"time":"2022-03-30 12:00:50,975","name":"root","level": "WARNING","module": "schema","line": "133","message": "employee does not exist"}'
+u'{"time":"2022-03-30 12:00:50,977","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 134, in mutate
+    raise Exception("employee does not exist")
+graphql.error.located_error.GraphQLLocatedError: employee does not exist
+"}'
+u'{"time":"2022-03-30 12:00:55,263","name":"root","level": "INFO","module": "schema","line": "137","message": "started deleting employee"}'
+u'{"time":"2022-03-30 12:00:55,274","name":"root","level": "INFO","module": "schema","line": "139","message": "deleted employee successfully"}'

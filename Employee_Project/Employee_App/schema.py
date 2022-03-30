@@ -2,6 +2,7 @@ from datetime import date
 import graphene
 from graphene_django import DjangoObjectType
 from .models import Employee
+from .get_logger import get_logger
 
 class EmployeeType(DjangoObjectType):
     class Meta: 
@@ -24,8 +25,9 @@ class Query(graphene.ObjectType):
 
 class CreateEmployee(graphene.Mutation):
 
+    logger = get_logger()
+
     class Arguments:
-        id = graphene.ID(required=True)
         first_name = graphene.String(required=True)
         last_name = graphene.String(required=True)
         email = graphene.String(required=True)
@@ -36,26 +38,31 @@ class CreateEmployee(graphene.Mutation):
     employee = graphene.Field(EmployeeType)
 
     @classmethod
-    def mutate(cls, root, info, id, first_name, last_name, email, job_role = None, is_staff = False, date_joined = date.today()):
+    def mutate(cls, root, info, first_name, last_name, email, job_role = None, is_staff = False, date_joined = date.today()):
         employee = Employee()
 
-        if id != None:
-            employee.id = id
-        if first_name != None:
-            employee.first_name = first_name
-        if last_name != None:
-            employee.last_name = last_name
-        if email != None:
-            employee.email = email
-        if job_role != None:
-            employee.job_role = job_role
-        if is_staff != None:
-            employee.is_staff = is_staff
-        if date_joined != None:
-            employee.date_joined = date_joined
+        try:
+            cls.logger.info("started creating employee")
+            if first_name != None:
+                employee.first_name = first_name
+            if last_name != None:
+                employee.last_name = last_name
+            if email != None:
+                employee.email = email
+            if job_role != None:
+                employee.job_role = job_role
+            if is_staff != None:
+                employee.is_staff = is_staff
+            if date_joined != None:
+                employee.date_joined = date_joined
+                
+            employee.save()
+            cls.logger.info("created employee successfully")
+            return CreateEmployee(employee=employee)
 
-        employee.save()
-        return CreateEmployee(employee=employee)
+        except:
+            cls.logger.error("problem in creating employee")
+            raise Exception("problem in creating employee")
 
 class EmployeeInput(graphene.InputObjectType):
     first_name = graphene.String()
@@ -67,6 +74,8 @@ class EmployeeInput(graphene.InputObjectType):
 
 class UpdateEmployee(graphene.Mutation):
 
+    logger = get_logger()
+
     class Arguments:
         id = graphene.ID(required=True)
         input = EmployeeInput(required=True)
@@ -75,25 +84,41 @@ class UpdateEmployee(graphene.Mutation):
 
     @classmethod
     def mutate(cls, root, info, id, input):
-        employee = Employee.objects.get(id=id)
-        
-        if input.first_name != None:
-            employee.first_name = input.first_name
-        if input.last_name != None:
-            employee.last_name = input.last_name
-        if input.email != None:
-            employee.email = input.email
-        if input.job_role != None:
-            employee.jon_role = input.job_role
-        if input.is_staff != None:
-            employee.is_staff = input.is_staff
-        if input.date_joined != None:
-            employee.date_joined = input.date_joined
 
-        employee.save()
-        return UpdateEmployee(employee=employee)
+        try:
+            employee = Employee.objects.get(id=id)
+        except:
+            cls.logger.warn("employee does not exist")
+            raise Exception("employee does not exist")
+        
+        try:
+            if employee != None:
+                cls.logger.info("started updating employee")
+                if input.first_name != None:
+                    employee.first_name = input.first_name
+                if input.last_name != None:
+                    employee.last_name = input.last_name
+                if input.email != None:
+                    employee.email = input.email
+                if input.job_role != None:
+                    employee.job_role = input.job_role
+                if input.is_staff != None:
+                    employee.is_staff = input.is_staff
+                if input.date_joined != None:
+                    employee.date_joined = input.date_joined
+
+                employee.save()
+                cls.logger.info("updated employee successfully")
+                return UpdateEmployee(employee=employee)
+
+        except:
+            cls.logger.error("problem in updating employee")
+            raise Exception("problem in updating employee")
 
 class DeleteEmployee(graphene.Mutation):
+
+    logger = get_logger()
+
     class Arguments:
         id = graphene.ID(required=True)
 
@@ -101,9 +126,21 @@ class DeleteEmployee(graphene.Mutation):
 
     @classmethod
     def mutate(cls, root, info, id):
-        employee = Employee.objects.get(id=id)
-        employee.delete()
-        return
+
+        try:
+            employee = Employee.objects.get(id=id)
+        except:
+            cls.logger.warn("employee does not exist")
+            raise Exception("employee does not exist")
+
+        try:
+            cls.logger.info("started deleting employee")
+            employee.delete()
+            cls.logger.info("deleted employee successfully")
+            return
+        except:
+            cls.logger.info("problem in deleting employee")
+            raise Exception("problem in deleting employee")    
 
 class Mutation(graphene.ObjectType):
     create_employee = CreateEmployee.Field()
