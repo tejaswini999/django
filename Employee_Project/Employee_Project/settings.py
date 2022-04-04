@@ -59,7 +59,9 @@ ROOT_URLCONF = 'Employee_Project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'FrontEnd/build'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,3 +140,7 @@ GRAPHENE = {
     # ]
 
 }
+
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'FrontEnd/build/static'),
+]

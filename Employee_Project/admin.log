@@ -93,3 +93,125 @@ graphql.error.located_error.GraphQLLocatedError: employee does not exist
 "}'
 u'{"time":"2022-03-30 12:00:55,263","name":"root","level": "INFO","module": "schema","line": "137","message": "started deleting employee"}'
 u'{"time":"2022-03-30 12:00:55,274","name":"root","level": "INFO","module": "schema","line": "139","message": "deleted employee successfully"}'
+u'{"time":"2022-04-01 16:21:00,390","name":"root","level": "INFO","module": "schema","line": "45","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:21:00,420","name":"root","level": "INFO","module": "schema","line": "60","message": "created employee successfully"}'
+u'{"time":"2022-04-01 16:21:00,426","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "graphql.error.base.GraphQLError: Cannot return null for non-nullable field EmployeeType.empID.
+"}'
+u'{"time":"2022-04-01 16:23:54,864","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+graphql.error.located_error.GraphQLLocatedError: mutate() got an unexpected keyword argument 'empID'
+"}'
+u'{"time":"2022-04-01 16:25:04,713","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:25:04,738","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-01 16:25:13,882","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:25:13,892","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-01 16:26:17,228","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:26:17,251","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-01 16:33:36,692","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:33:36,697","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-01 16:35:00,901","name":"root","level": "INFO","module": "schema","line": "99","message": "started updating employee"}'
+u'{"time":"2022-04-01 16:35:00,919","name":"root","level": "INFO","module": "schema","line": "114","message": "updated employee successfully"}'
+u'{"time":"2022-04-01 16:35:18,117","name":"root","level": "INFO","module": "schema","line": "99","message": "started updating employee"}'
+u'{"time":"2022-04-01 16:35:18,120","name":"root","level": "INFO","module": "schema","line": "114","message": "updated employee successfully"}'
+u'{"time":"2022-04-01 16:35:49,902","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:35:49,925","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-01 16:37:59,801","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-01 16:37:59,827","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-01 17:00:18,404","name":"root","level": "WARNING","module": "schema","line": "136","message": "employee does not exist"}'
+u'{"time":"2022-04-01 17:00:18,472","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 137, in mutate
+    raise Exception("employee does not exist")
+graphql.error.located_error.GraphQLLocatedError: employee does not exist
+"}'
+u'{"time":"2022-04-01 17:00:26,863","name":"root","level": "INFO","module": "schema","line": "140","message": "started deleting employee"}'
+u'{"time":"2022-04-01 17:00:26,877","name":"root","level": "INFO","module": "schema","line": "142","message": "deleted employee successfully"}'
+u'{"time":"2022-04-04 08:39:01,399","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:39:01,429","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:42:46,954","name":"root","level": "INFO","module": "schema","line": "99","message": "started updating employee"}'
+u'{"time":"2022-04-04 08:42:46,957","name":"root","level": "INFO","module": "schema","line": "105","message": "updated empDOJ successfully"}'
+u'{"time":"2022-04-04 08:42:47,021","name":"root","level": "INFO","module": "schema","line": "120","message": "updated employee successfully"}'
+u'{"time":"2022-04-04 08:45:54,179","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:45:54,190","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:46:05,412","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:46:05,424","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:46:43,223","name":"root","level": "INFO","module": "schema","line": "146","message": "started deleting employee"}'
+u'{"time":"2022-04-04 08:46:43,231","name":"root","level": "INFO","module": "schema","line": "148","message": "deleted employee successfully"}'
+u'{"time":"2022-04-04 08:47:30,010","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:47:30,026","name":"root","level": "INFO","module": "schema","line": "63","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:49:46,455","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:49:46,456","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:49:46,465","name":"root","level": "INFO","module": "schema","line": "64","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:50:49,730","name":"root","level": "INFO","module": "schema","line": "149","message": "started deleting employee"}'
+u'{"time":"2022-04-04 08:50:49,740","name":"root","level": "INFO","module": "schema","line": "151","message": "deleted employee successfully"}'
+u'{"time":"2022-04-04 08:51:29,158","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:51:29,159","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:51:29,159","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:51:29,160","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:51:29,169","name":"root","level": "INFO","module": "schema","line": "66","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:53:46,040","name":"root","level": "INFO","module": "schema","line": "150","message": "started deleting employee"}'
+u'{"time":"2022-04-04 08:53:46,049","name":"root","level": "INFO","module": "schema","line": "152","message": "deleted employee successfully"}'
+u'{"time":"2022-04-04 08:54:01,023","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:54:01,024","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:54:01,025","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:54:01,027","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:54:01,039","name":"root","level": "INFO","module": "schema","line": "66","message": "2022-04-04"}'
+u'{"time":"2022-04-04 08:54:01,040","name":"root","level": "INFO","module": "schema","line": "67","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:56:02,609","name":"root","level": "INFO","module": "schema","line": "150","message": "started deleting employee"}'
+u'{"time":"2022-04-04 08:56:02,618","name":"root","level": "INFO","module": "schema","line": "152","message": "deleted employee successfully"}'
+u'{"time":"2022-04-04 08:56:14,976","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:56:14,977","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:56:14,979","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:56:14,979","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:56:14,990","name":"root","level": "INFO","module": "schema","line": "66","message": "2022-04-04"}'
+u'{"time":"2022-04-04 08:56:14,991","name":"root","level": "INFO","module": "schema","line": "67","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:59:17,270","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:59:17,272","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:17,273","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:17,273","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:17,285","name":"root","level": "INFO","module": "schema","line": "66","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:17,287","name":"root","level": "INFO","module": "schema","line": "67","message": "created employee successfully"}'
+u'{"time":"2022-04-04 08:59:38,747","name":"root","level": "INFO","module": "schema","line": "150","message": "started deleting employee"}'
+u'{"time":"2022-04-04 08:59:38,755","name":"root","level": "INFO","module": "schema","line": "152","message": "deleted employee successfully"}'
+u'{"time":"2022-04-04 08:59:46,673","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 08:59:46,674","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:46,676","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:46,676","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-02"}'
+u'{"time":"2022-04-04 08:59:46,697","name":"root","level": "INFO","module": "schema","line": "66","message": "2022-04-04"}'
+u'{"time":"2022-04-04 08:59:46,697","name":"root","level": "INFO","module": "schema","line": "67","message": "created employee successfully"}'
+u'{"time":"2022-04-04 09:00:43,189","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 09:00:43,190","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-02"}'
+u'{"time":"2022-04-04 09:00:43,191","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-02"}'
+u'{"time":"2022-04-04 09:00:43,192","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-02"}'
+u'{"time":"2022-04-04 09:00:43,207","name":"root","level": "INFO","module": "schema","line": "66","message": "2022-04-02"}'
+u'{"time":"2022-04-04 09:00:43,208","name":"root","level": "INFO","module": "schema","line": "67","message": "created employee successfully"}'
+u'{"time":"2022-04-04 09:01:01,450","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 09:01:01,455","name":"root","level": "INFO","module": "schema","line": "47","message": "None"}'
+u'{"time":"2022-04-04 09:01:01,467","name":"root","level": "ERROR","module": "schema","line": "71","message": "problem in creating employee"}'
+u'{"time":"2022-04-04 09:01:01,497","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 72, in mutate
+    raise Exception("problem in creating employee")
+graphql.error.located_error.GraphQLLocatedError: problem in creating employee
+"}'
+u'{"time":"2022-04-04 09:01:44,154","name":"root","level": "INFO","module": "schema","line": "46","message": "started creating employee"}'
+u'{"time":"2022-04-04 09:01:44,156","name":"root","level": "INFO","module": "schema","line": "47","message": "2022-04-04"}'
+u'{"time":"2022-04-04 09:01:44,157","name":"root","level": "INFO","module": "schema","line": "54","message": "2022-04-04"}'
+u'{"time":"2022-04-04 09:01:44,157","name":"root","level": "INFO","module": "schema","line": "55","message": "2022-04-04"}'
+u'{"time":"2022-04-04 09:01:44,165","name":"root","level": "INFO","module": "schema","line": "66","message": "2022-04-04"}'
+u'{"time":"2022-04-04 09:01:44,166","name":"root","level": "INFO","module": "schema","line": "67","message": "created employee successfully"}'
