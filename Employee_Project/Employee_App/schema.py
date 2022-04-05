@@ -3,6 +3,8 @@ import graphene
 from graphene_django import DjangoObjectType
 from .models import Employee
 from .get_logger import get_logger
+from graphql_auth.schema import UserQuery, MeQuery
+from graphql_auth import mutations
 
 class EmployeeType(DjangoObjectType):
     class Meta: 
@@ -151,7 +153,20 @@ class DeleteEmployee(graphene.Mutation):
             cls.logger.info("problem in deleting employee")
             raise Exception("problem in deleting employee")    
 
-class Mutation(graphene.ObjectType):
+class AuthMutation(graphene.ObjectType):
+   register = mutations.Register.Field()
+   verify_account = mutations.VerifyAccount.Field()
+   token_auth = mutations.ObtainJSONWebToken.Field()
+   update_account = mutations.UpdateAccount.Field()
+   resend_activation_email = mutations.ResendActivationEmail.Field()
+   send_password_reset_email = mutations.SendPasswordResetEmail.Field()
+   password_reset = mutations.PasswordReset.Field()
+   password_change = mutations.PasswordChange.Field()
+
+class Query(UserQuery, MeQuery, graphene.ObjectType):
+    pass
+
+class Mutation(AuthMutation, graphene.ObjectType):
     create_employee = CreateEmployee.Field()
     update_employee = UpdateEmployee.Field()
     delete_employee = DeleteEmployee.Field()
