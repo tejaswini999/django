@@ -1,10 +1,13 @@
-from datetime import date
+import datetime
 import graphene
 from graphene_django import DjangoObjectType
-from .models import Employee
+from .models import Employee, CustomUser
 from .get_logger import get_logger
 from graphql_auth.schema import UserQuery, MeQuery
 from graphql_auth import mutations
+from graphql_jwt.decorators import login_required
+from graphql_jwt.shortcuts import get_token, create_refresh_token
+from django.contrib.auth.hashers import make_password
 
 class EmployeeType(DjangoObjectType):
     class Meta: 
@@ -19,35 +22,56 @@ class EmployeeType(DjangoObjectType):
             'empOfficeVenue',
         )
 
-class Query(graphene.ObjectType):
-    employees = graphene.List(EmployeeType)
+class UserType(DjangoObjectType):
+    """
+    Django Object Type for Custom User
+    """
+    class Meta:
+        model = CustomUser
+        fields = ("email", "username", "display_name", "password",)
+        description = 'Model having fields of User type'
 
-    def resolve_employees(root, info, **kwargs):
+class Query(UserQuery, MeQuery, graphene.ObjectType):
+    all_employees = graphene.List(EmployeeType)
+
+    # @login_required
+    def resolve_all_employees(root, info):
         return Employee.objects.all()
+
+class ViewEmployee(graphene.Mutation):
+
+    class Arguments:
+        empID = graphene.Int(required=True)
+
+    employee = graphene.Field(EmployeeType)
+
+    @classmethod
+    # @login_required
+    def mutate(cls, root, info, empID):
+        employee = Employee.objects.get(empID=empID)
+        return ViewEmployee(employee=employee)
 
 class CreateEmployee(graphene.Mutation):
 
     logger = get_logger()
 
     class Arguments:
-        empID = graphene.Int(required=True)
         empName = graphene.String(required=True)
         empDOJ = graphene.Date()
-        empDescription = graphene.String(required=True)
+        empDescription = graphene.String()
         empCategory = graphene.String()
         empCity = graphene.String(required=True)
-        empOfficeVenue = graphene.String()
+        empOfficeVenue = graphene.String(required=True)
 
     employee = graphene.Field(EmployeeType)
 
     @classmethod
-    def mutate(cls, root, info, empID = None, empName = None, empDOJ = date.today(), empDescription = None, empCategory = None, empCity = None, empOfficeVenue = None):
+    # @login_required
+    def mutate(cls, root, info, empName = None, empDOJ = datetime.date.today(), empDescription = None, empCategory = None, empCity = None, empOfficeVenue = None):
         employee = Employee()
 
         try:
             cls.logger.info("started creating employee")
-            if empID != None:
-                employee.empID = empID
             if empName != None:
                 employee.empName = empName
             if empDOJ != None:
@@ -69,26 +93,24 @@ class CreateEmployee(graphene.Mutation):
             cls.logger.error("problem in creating employee")
             raise Exception("problem in creating employee")
 
-class EmployeeInput(graphene.InputObjectType):
-    empName = graphene.String()
-    empDOJ = graphene.Date()
-    empDescription = graphene.String()
-    empCategory = graphene.String()
-    empCity = graphene.String()
-    empOfficeVenue = graphene.String()
-
 class UpdateEmployee(graphene.Mutation):
 
     logger = get_logger()
 
     class Arguments:
         empID = graphene.Int(required=True)
-        input = EmployeeInput(required=True)
+        empName = graphene.String()
+        empDOJ = graphene.Date()
+        empDescription = graphene.String()
+        empCategory = graphene.String()
+        empCity = graphene.String()
+        empOfficeVenue = graphene.String()
 
     employee = graphene.Field(EmployeeType)
 
     @classmethod
-    def mutate(cls, root, info, empID, input):
+    # @login_required
+    def mutate(cls, root, info, empID, empName=None, empDOJ=None, empDescription=None, empCategory=None, empCity=None, empOfficeVenue=None):
 
         try:
             employee = Employee.objects.get(empID=empID)
@@ -99,23 +121,23 @@ class UpdateEmployee(graphene.Mutation):
         try:
             if employee != None:
                 cls.logger.info("started updating employee")
-                if input.empName != None:
-                    employee.empName = input.empName
+                if empName != None:
+                    employee.empName = empName
                     cls.logger.info("updated empName successfully")
-                if input.empDOJ != None:
-                    employee.empDOJ = input.empDOJ
+                if empDOJ != None:
+                    employee.empDOJ = empDOJ
                     cls.logger.info("updated empDOJ successfully")
-                if input.empDescription != None:
-                    employee.empDescription = input.empDescription
+                if empDescription != None:
+                    employee.empDescription = empDescription
                     cls.logger.info("updated empDescription successfully")
-                if input.empCategory != None:
-                    employee.empCategory = input.empCategory
+                if empCategory != None:
+                    employee.empCategory = empCategory
                     cls.logger.info("updated empCategory successfully")
-                if input.empCity != None:
-                    employee.empCity = input.empCity
+                if empCity != None:
+                    employee.empCity = empCity
                     cls.logger.info("updated empCity successfully")
-                if input.empOfficeVenue != None:
-                    employee.empOfficeVenue = input.empOfficeVenue
+                if empOfficeVenue != None:
+                    employee.empOfficeVenue = empOfficeVenue
                     cls.logger.info("updated empOfficeVenue successfully")
 
                 employee.save()
@@ -136,6 +158,7 @@ class DeleteEmployee(graphene.Mutation):
     employee = graphene.Field(EmployeeType)
 
     @classmethod
+    # @login_required
     def mutate(cls, root, info, empID):
 
         try:
@@ -151,10 +174,60 @@ class DeleteEmployee(graphene.Mutation):
             return
         except:
             cls.logger.info("problem in deleting employee")
-            raise Exception("problem in deleting employee")    
+            raise Exception("problem in deleting employee")   
+
+class Register(graphene.Mutation):
+    """
+        Mutation for registering user
+
+        -- Params :   Graphene.mutation
+    """
+    user = graphene.Field(UserType)
+    success = graphene.Boolean()
+    token = graphene.String()
+    refresh_token = graphene.String()
+
+    class Arguments:
+        email = graphene.String(required=True)
+        password = graphene.String(required=True)
+        username = graphene.String(required=True)
+        display_name = graphene.String(required=True)
+
+    @classmethod
+    def mutate(cls, root, info, email, password, username, display_name):
+        """
+            Mutating for creating user
+
+            Params: email, password, username, display_name
+                    ** Username should be unique
+
+            Return : newly registered user object
+        """
+        try:
+            user = CustomUser.objects.get(username=username)
+        except CustomUser.DoesNotExist as e:
+            user = None
+
+        if user:
+            raise Exception('User Already Exists!')
+        else:
+            try:
+                user_obj = CustomUser(email=email, password=make_password(password), username=username,
+                                  display_name=display_name)
+                user_obj.save()
+                token = get_token(user_obj)
+                refresh_token = create_refresh_token(user_obj)
+
+                return Register(user=user_obj,
+                                token=token,
+                                refresh_token=refresh_token,
+                                success=True)
+            except Exception as e:
+                cls.logger.error(str(e))
+                raise Exception("Problem in User Creation.") 
 
 class AuthMutation(graphene.ObjectType):
-   register = mutations.Register.Field()
+   register = Register.Field()
    verify_account = mutations.VerifyAccount.Field()
    token_auth = mutations.ObtainJSONWebToken.Field()
    update_account = mutations.UpdateAccount.Field()
@@ -162,9 +235,6 @@ class AuthMutation(graphene.ObjectType):
    send_password_reset_email = mutations.SendPasswordResetEmail.Field()
    password_reset = mutations.PasswordReset.Field()
    password_change = mutations.PasswordChange.Field()
-
-class Query(UserQuery, MeQuery, graphene.ObjectType):
-    pass
 
 class Mutation(AuthMutation, graphene.ObjectType):
     create_employee = CreateEmployee.Field()

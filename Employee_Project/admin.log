@@ -227,3 +227,114 @@ u'{"time":"2022-04-04 11:53:13,620","name":"graphql.execution.utils","level": "E
     raise Exception("employee does not exist")
 graphql.error.located_error.GraphQLLocatedError: employee does not exist
 "}'
+u'{"time":"2022-04-07 11:17:09,829","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 30, in wrapper
+    return func(info.context, *args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 42, in wrapper
+    raise exc
+graphql.error.located_error.GraphQLLocatedError: You do not have permission to perform this action
+"}'
+u'{"time":"2022-04-07 18:04:03,859","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 30, in wrapper
+    return func(info.context, *args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 41, in wrapper
+    return f(*args, **kwargs)
+graphql.error.located_error.GraphQLLocatedError: mutate() missing 1 required positional argument: 'empDOJ'
+"}'
+u'{"time":"2022-04-07 18:05:34,005","name":"root","level": "INFO","module": "schema","line": "63","message": "started creating employee"}'
+u'{"time":"2022-04-07 18:05:34,023","name":"root","level": "INFO","module": "schema","line": "78","message": "created employee successfully"}'
+u'{"time":"2022-04-07 18:19:13,021","name":"root","level": "INFO","module": "schema","line": "163","message": "started deleting employee"}'
+u'{"time":"2022-04-07 18:19:13,027","name":"root","level": "INFO","module": "schema","line": "165","message": "deleted employee successfully"}'
+u'{"time":"2022-04-07 18:19:25,704","name":"root","level": "INFO","module": "schema","line": "163","message": "started deleting employee"}'
+u'{"time":"2022-04-07 18:19:25,714","name":"root","level": "INFO","module": "schema","line": "165","message": "deleted employee successfully"}'
+u'{"time":"2022-04-07 18:19:27,900","name":"root","level": "WARNING","module": "schema","line": "159","message": "employee does not exist"}'
+u'{"time":"2022-04-07 18:19:27,957","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 30, in wrapper
+    return func(info.context, *args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 41, in wrapper
+    return f(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 160, in mutate
+    raise Exception("employee does not exist")
+graphql.error.located_error.GraphQLLocatedError: employee does not exist
+"}'
+u'{"time":"2022-04-07 18:21:43,376","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 30, in wrapper
+    return func(info.context, *args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 41, in wrapper
+    return f(*args, **kwargs)
+graphql.error.located_error.GraphQLLocatedError: mutate() missing 2 required positional arguments: 'empDOJ' and 'empDescription'
+"}'
+u'{"time":"2022-04-07 18:23:26,249","name":"root","level": "INFO","module": "schema","line": "63","message": "started creating employee"}'
+u'{"time":"2022-04-07 18:23:26,266","name":"root","level": "INFO","module": "schema","line": "78","message": "created employee successfully"}'
+u'{"time":"2022-04-07 18:23:52,634","name":"root","level": "INFO","module": "schema","line": "63","message": "started creating employee"}'
+u'{"time":"2022-04-07 18:23:52,641","name":"root","level": "INFO","module": "schema","line": "78","message": "created employee successfully"}'
+u'{"time":"2022-04-07 18:24:24,867","name":"root","level": "INFO","module": "schema","line": "163","message": "started deleting employee"}'
+u'{"time":"2022-04-07 18:24:24,875","name":"root","level": "INFO","module": "schema","line": "165","message": "deleted employee successfully"}'
+u'{"time":"2022-04-07 18:38:39,120","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 30, in wrapper
+    return func(info.context, *args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 42, in wrapper
+    raise exc
+graphql.error.located_error.GraphQLLocatedError: You do not have permission to perform this action
+"}'
+u'{"time":"2022-04-08 11:21:08,322","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 30, in wrapper
+    return func(info.context, *args, **kwargs)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql_jwt\decorators.py", line 42, in wrapper
+    raise exc
+graphql.error.located_error.GraphQLLocatedError: You do not have permission to perform this action
+"}'
+u'{"time":"2022-04-08 12:05:54,991","name":"root","level": "INFO","module": "schema","line": "61","message": "started creating employee"}'
+u'{"time":"2022-04-08 12:05:54,999","name":"root","level": "INFO","module": "schema","line": "76","message": "created employee successfully"}'
+u'{"time":"2022-04-08 16:44:09,285","name":"root","level": "INFO","module": "schema","line": "61","message": "started creating employee"}'
+u'{"time":"2022-04-08 16:44:09,309","name":"root","level": "INFO","module": "schema","line": "76","message": "created employee successfully"}'
+u'{"time":"2022-04-08 17:09:23,945","name":"root","level": "INFO","module": "schema","line": "158","message": "started deleting employee"}'
+u'{"time":"2022-04-08 17:09:23,968","name":"root","level": "INFO","module": "schema","line": "160","message": "deleted employee successfully"}'
+u'{"time":"2022-04-08 17:11:13,952","name":"root","level": "INFO","module": "schema","line": "61","message": "started creating employee"}'
+u'{"time":"2022-04-08 17:11:13,976","name":"root","level": "INFO","module": "schema","line": "76","message": "created employee successfully"}'
+u'{"time":"2022-04-08 17:11:39,151","name":"root","level": "INFO","module": "schema","line": "158","message": "started deleting employee"}'
+u'{"time":"2022-04-08 17:11:39,172","name":"root","level": "INFO","module": "schema","line": "160","message": "deleted employee successfully"}'
+u'{"time":"2022-04-08 17:13:05,885","name":"root","level": "INFO","module": "schema","line": "61","message": "started creating employee"}'
+u'{"time":"2022-04-08 17:13:05,899","name":"root","level": "INFO","module": "schema","line": "76","message": "created employee successfully"}'
+u'{"time":"2022-04-08 17:13:23,754","name":"root","level": "INFO","module": "schema","line": "158","message": "started deleting employee"}'
+u'{"time":"2022-04-08 17:13:23,776","name":"root","level": "INFO","module": "schema","line": "160","message": "deleted employee successfully"}'
+u'{"time":"2022-04-08 17:16:23,822","name":"root","level": "INFO","module": "schema","line": "61","message": "started creating employee"}'
+u'{"time":"2022-04-08 17:16:23,845","name":"root","level": "INFO","module": "schema","line": "76","message": "created employee successfully"}'
+u'{"time":"2022-04-08 17:19:07,267","name":"root","level": "INFO","module": "schema","line": "158","message": "started deleting employee"}'
+u'{"time":"2022-04-08 17:19:07,282","name":"root","level": "INFO","module": "schema","line": "160","message": "deleted employee successfully"}'
