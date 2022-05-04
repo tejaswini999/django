@@ -338,3 +338,50 @@ u'{"time":"2022-04-08 17:16:23,822","name":"root","level": "INFO","module": "sch
 u'{"time":"2022-04-08 17:16:23,845","name":"root","level": "INFO","module": "schema","line": "76","message": "created employee successfully"}'
 u'{"time":"2022-04-08 17:19:07,267","name":"root","level": "INFO","module": "schema","line": "158","message": "started deleting employee"}'
 u'{"time":"2022-04-08 17:19:07,282","name":"root","level": "INFO","module": "schema","line": "160","message": "deleted employee successfully"}'
+u'{"time":"2022-04-26 16:13:29,214","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+graphql.error.located_error.GraphQLLocatedError: resolve_employees() missing 1 required positional argument: 'empID'
+"}'
+u'{"time":"2022-04-26 16:15:51,435","name":"root","level": "INFO","module": "schema","line": "119","message": "started updating employee"}'
+u'{"time":"2022-04-26 16:15:51,436","name":"root","level": "INFO","module": "schema","line": "122","message": "updated empName successfully"}'
+u'{"time":"2022-04-26 16:15:51,436","name":"root","level": "INFO","module": "schema","line": "125","message": "updated empDOJ successfully"}'
+u'{"time":"2022-04-26 16:15:51,437","name":"root","level": "INFO","module": "schema","line": "128","message": "updated empDescription successfully"}'
+u'{"time":"2022-04-26 16:15:51,437","name":"root","level": "INFO","module": "schema","line": "131","message": "updated empCategory successfully"}'
+u'{"time":"2022-04-26 16:15:51,438","name":"root","level": "INFO","module": "schema","line": "134","message": "updated empCity successfully"}'
+u'{"time":"2022-04-26 16:15:51,438","name":"root","level": "INFO","module": "schema","line": "137","message": "updated empOfficeVenue successfully"}'
+u'{"time":"2022-04-26 16:15:51,453","name":"root","level": "INFO","module": "schema","line": "140","message": "updated employee successfully"}'
+u'{"time":"2022-04-26 16:16:21,930","name":"root","level": "INFO","module": "schema","line": "119","message": "started updating employee"}'
+u'{"time":"2022-04-26 16:16:21,931","name":"root","level": "INFO","module": "schema","line": "122","message": "updated empName successfully"}'
+u'{"time":"2022-04-26 16:16:21,931","name":"root","level": "INFO","module": "schema","line": "125","message": "updated empDOJ successfully"}'
+u'{"time":"2022-04-26 16:16:21,932","name":"root","level": "INFO","module": "schema","line": "128","message": "updated empDescription successfully"}'
+u'{"time":"2022-04-26 16:16:21,933","name":"root","level": "INFO","module": "schema","line": "131","message": "updated empCategory successfully"}'
+u'{"time":"2022-04-26 16:16:21,934","name":"root","level": "INFO","module": "schema","line": "134","message": "updated empCity successfully"}'
+u'{"time":"2022-04-26 16:16:21,941","name":"root","level": "INFO","module": "schema","line": "137","message": "updated empOfficeVenue successfully"}'
+u'{"time":"2022-04-26 16:16:21,946","name":"root","level": "INFO","module": "schema","line": "140","message": "updated employee successfully"}'
+u'{"time":"2022-04-26 16:18:46,503","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 208, in mutate
+    raise Exception('User Already Exists!')
+graphql.error.located_error.GraphQLLocatedError: User Already Exists!
+"}'
+u'{"time":"2022-04-26 16:18:56,308","name":"graphql.execution.utils","level": "ERROR","module": "utils","line": "155","message": "Traceback (most recent call last):
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 489, in _resolve_from_executor
+    executor(resolve, reject)
+  File "D:\1_bcg\django_app\venv\lib\site-packages\promise\promise.py", line 756, in executor
+    return resolve(f(*args, **kwargs))
+  File "D:\1_bcg\django_app\venv\lib\site-packages\graphql\execution\middleware.py", line 75, in make_it_promise
+    return next(*args, **kwargs)
+  File "D:\1_bcg\django_app\Employee_Project\Employee_App\schema.py", line 208, in mutate
+    raise Exception('User Already Exists!')
+graphql.error.located_error.GraphQLLocatedError: User Already Exists!
+"}'

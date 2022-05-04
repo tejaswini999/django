@@ -31,25 +31,21 @@ class UserType(DjangoObjectType):
         fields = ("email", "username", "display_name", "password",)
         description = 'Model having fields of User type'
 
-class Query(UserQuery, MeQuery, graphene.ObjectType):
+class EmployeeQuery(UserQuery, MeQuery, graphene.ObjectType):
     all_employees = graphene.List(EmployeeType)
 
     # @login_required
     def resolve_all_employees(root, info):
         return Employee.objects.all()
 
-class ViewEmployee(graphene.Mutation):
+class SingleEmployeeQuery(graphene.ObjectType):
+    employees = graphene.List(EmployeeType, empID=graphene.Int())
 
-    class Arguments:
-        empID = graphene.Int(required=True)
+    def resolve_employees(root, info, empID):
+        return Employee.objects.filter(empID=empID)
 
-    employee = graphene.Field(EmployeeType)
-
-    @classmethod
-    # @login_required
-    def mutate(cls, root, info, empID):
-        employee = Employee.objects.get(empID=empID)
-        return ViewEmployee(employee=employee)
+class Query(EmployeeQuery, SingleEmployeeQuery, graphene.ObjectType):
+    pass
 
 class CreateEmployee(graphene.Mutation):
 
